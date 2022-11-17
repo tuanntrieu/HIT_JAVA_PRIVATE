@@ -1,0 +1,129 @@
+package Bai1;
+
+import java.util.Scanner;
+
+public class NhanVien {
+    private int id;
+    private String hoTen;
+    private String kieuNhanVien;
+    private int soNgayLam;
+    private int namVaoLam;
+    private int phuCap;
+    private int luong;
+
+    private Scanner sc = new Scanner(System.in);
+
+    public NhanVien() {
+
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
+
+    public void setKieuNhanVien(String kieuNhanVien) {
+        this.kieuNhanVien = kieuNhanVien;
+    }
+
+    public void setSoNgayLam(int soNgayLam) {
+        this.soNgayLam = soNgayLam;
+    }
+
+    public void setNamVaoLam(int namVaoLam) {
+        this.namVaoLam = namVaoLam;
+    }
+
+    public void setPhuCap(int phuCap) {
+        this.phuCap = phuCap;
+    }
+
+    public void setLuong(int luong) {
+        this.luong = luong;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public String getKieuNhanVien() {
+        return kieuNhanVien;
+    }
+
+    public int getSoNgayLam() {
+        return soNgayLam;
+    }
+
+    public int getNamVaoLam() {
+        return namVaoLam;
+    }
+
+    public int getPhuCap() {
+        phuCap = 100000;
+        int nam = 2022 - namVaoLam;
+        if (nam == 0)
+            phuCap = 100000;
+        else {
+            for (int i = 1; i < nam; i++) {
+                phuCap += 200000 * i;
+            }
+        }
+        return phuCap;
+    }
+
+    public int getLuong() {
+        int mucLuong = 0;
+        if (kieuNhanVien.compareToIgnoreCase("san xuat") == 0)
+            mucLuong = 350000;
+        else if (kieuNhanVien.compareToIgnoreCase("van phong") == 0)
+            mucLuong = 400000;
+
+        luong = soNgayLam * mucLuong;
+        return luong;
+    }
+
+    public void input() {
+        System.out.print("ID: ");
+        setId(sc.nextInt());
+        sc.nextLine();
+        System.out.print("Ho ten: ");
+        setHoTen(sc.nextLine());
+        System.out.print("Kieu Nhan Vien: ");
+        setKieuNhanVien(sc.nextLine());
+        System.out.print("So Ngay Lam: ");
+        setSoNgayLam(sc.nextInt());
+        System.out.print("Nam vao lam: ");
+        setNamVaoLam(sc.nextInt());
+    }
+
+    void output() {
+        System.out.println(
+                getId() + "               " + getHoTen() + "               " + getKieuNhanVien() + "               " +
+                        getSoNgayLam() + "               " + getNamVaoLam() + "               " + getLuong()
+                        + "               " + getPhuCap() + "               " + (getLuong() +
+                                getPhuCap()));
+    }
+
+    public static void main(String[] args) {
+        NhanVien[] nv = new NhanVien[5];
+        for (int i = 0; i < 2; i++) {
+            System.out.println("Nhav vien " + i + 1 + ":");
+            nv[i] = new NhanVien();
+            nv[i].input();
+
+        }
+        System.out.println( "ID"+"               " +
+        "Ho Ten"+"               " + "Kieu Nhan Vien"+"               " +
+        "So ngay lam"+"               " + "Nam vao lam"+"               " + "Luong"+"               " +"Phu cap"+"               " + "Tong tien");
+        for (int i = 0; i < 2; i++) {
+            nv[i].output();
+        }
+    }
+}
