@@ -114,7 +114,7 @@ public class NhanVien {
 
     public static void main(String[] args) {
         NhanVien[] nv = new NhanVien[5];
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("Nhav vien " +( i + 1) + ":");
             nv[i] = new NhanVien();
             nv[i].input();
@@ -123,7 +123,7 @@ public class NhanVien {
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "ID",
                 "Ho Ten", "Kieu Nhan Vien",
                 "So ngay lam", "Nam vao lam", "Luong", "Phu cap", "Tong tien");
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             nv[i].output();
         }
     }
