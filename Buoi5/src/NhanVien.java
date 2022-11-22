@@ -36,15 +36,7 @@ public class NhanVien {
     }
 
     public void setPhuCap(int phuCap) {
-        phuCap = 100000;
-        int nam = 2022 - namVaoLam;
-        if (nam == 0)
-            phuCap = 100000;
-        else {
-            for (int i = 1; i < nam; i++) {
-                phuCap += 200000 * i;
-            }
-        }
+        phuCap = 100000+(2022 - namVaoLam)*200000;
         this.phuCap = phuCap;
     }
 
@@ -114,7 +106,7 @@ public class NhanVien {
 
     public static void main(String[] args) {
         NhanVien[] nv = new NhanVien[5];
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             System.out.println("Nhav vien " +( i + 1) + ":");
             nv[i] = new NhanVien();
             nv[i].input();
@@ -123,7 +115,7 @@ public class NhanVien {
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "ID",
                 "Ho Ten", "Kieu Nhan Vien",
                 "So ngay lam", "Nam vao lam", "Luong", "Phu cap", "Tong tien");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             nv[i].output();
         }
     }
