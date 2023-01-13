@@ -48,7 +48,7 @@ public class HoneyService implements HoneyInterface {
 		int dem=0;
 		for(int i=0;i<listHoney.size();i++){
 			if(listHoney.get(i).getId()==id){
-				listHoney.remove(listHoney.gei(i));
+				listHoney.remove(listHoney.get(i));
 				dem++;
 			}
 		}
