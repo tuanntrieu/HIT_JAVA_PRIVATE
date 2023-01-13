@@ -1,0 +1,4 @@
+2|2|18|Nam Dinh|3.5|abcxyz987321|thang04nd
+3|3|19|Nam Dinh|3.55|phamtien131003|tien03nd
+4|4|19|Ha Tinh|3.1|zingwang|vinh03ht
+5|5|8|Nam Dinh|3.8|binhtrieu|binh14nd
